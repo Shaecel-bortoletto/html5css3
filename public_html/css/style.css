@@ -1,41 +1,223 @@
-/*FOLHA DE ESTILO PRINCIPAL*/
-
-
-/**************INPORTANDO FONTES***********/
+/**
+* Folha de estilo principal 
+* @author Marcio Roberto
+*/
+ 
+/************** Importando font *************/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/*************** PRINCIPAL***************/
+/************** Principal *************/
 
 body{
-	font-family: 'Open Sans', sans-serif;
-	background-color: #c6c6c4;
-	background-image: url("../imagens/background.jpg");
-	font-size: 1em;/*1 em = 16px*/
+font-family: 'Open Sans', sans-serif;
+background-color: #00fff0;/*do eu quiser apenas um fundo simples*/
+
+/* uso de uma imagem como background, mas não é mais usado devido o peso nos smartphones 
+background-image: url('../imagens/background.jpg');
+background-attachment: fixed; /*Fixa o background
+background-size: cover; /*mantem o tamanho de forma responsiva*/
+
+font-size: 1em; /*1 em = 16px */
 }
 #main {
-	max-width: 1024px;
-	background-color: #ffffff;
-	margin: 0 auto; /*centralizar a Div*/
-	margin-top:50px;
+    max-width: 1024px;
+    background-color: #ffffff; /*Apenas para testar se estar centralizado*/
+    margin: 0 auto; /* Centralizar*/
+    margin-top: 50px;
 }
 
-/***********Cabeçalho*****************/
 
-header {
-	width: 100%;
-	height: 200px;
-	/*background-color: #ffff00; dica para ajustar os elementos*/
+
+/************** Cabeçalho *************/
+header{
+    width:100%;
+    height: 200px;
+    /* background-color: #ffff00; /*Dica para ajustar elemento */
+    margin-bottom: 20px;
 }
-
-header img {
-	margin-left: 380px;
-	margin-top: 30px;
+header img{
+    width: 195px;
+    height: 150px;
+    margin-top: 60px;
+    margin-left: 20px;
 
 }
-
-/********TRATAMENTO RESPONSIVO**********/
-
+/************** Tratamento responsivo *************/
 img {
-	max-width: 100%;/*todas as imagens do site ficaram responsivas*/
+    max-width: 100%; /*Todas as imagens ficam responsivas*/
 }
+/************** Menu *************/
+
+nav{
+    width: 100%;
+    max-width: 1024px;
+   /* margin-top: 20px; */
+   position: absolute;
+}
+nav ul{
+    /*removendo o estilo da lista*/
+    list-style: none;
+    /*Removendo os espaçamentos*/
+    padding: 0px;
+    /*Removendo as bordas*/
+    margin: 0px;
+    
+    /*Completar a largura qua falta do background (formar o menu)*/
+    /*overflow: hidden;*/
+}
+
+nav > ul > li{
+    float: left;
+    width: 24.903%; /*4 elementos do menu primários*/
+    border-right: 1px solid #cc470d;
+}
+
+nav > ul > li > a{
+    font-size: 1.125em; /*Aumentando a fonte no primeiro nível*/
+
+}
+
+h1{
+margin-top: 40px;
+text-align: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px;
+    display: block;
+    text-align: center; /*Centralizando*/
+   /* border: 1px solid #ffffff;/*Separando os conteúdos do menu*/
+   background-color: #000610;
+}
+
+
+nav ul li a:hover{
+    background-color: #00bcff;
+    transition: all 0.27s; /*Efeito de transição (0 a 1)*/
+}
+
+nav li ul{
+    display: none;
+}
+
+nav li:hover ul{
+    display: block;
+  
+}
+
+/* Desenhando um triângulo no css*/
+
+.Detalhes:after{/*atributo after (após o conteúdo)*/
+    content: '';/*content insere um conteúdo no css*/
+    color: #ff0000;
+    border: 5px solid transparent;
+    border-top-color: #e8e8e8;
+    display: inline-block;
+    vertical-align: middle;
+
+
+    /*border-left: #ff0000;
+    border-right: #00ff00;
+    border-bottom: #0000ff;
+    border-top: #ffff00;*/
+}
+
+.Mobile{
+    display: none;
+}
+/*Classe usada pelo o JS para fixar o menu*/
+.Fixar{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+/*************Rodape************/
+
+footer{
+    width: 100%;
+    background-color: #000000;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.75em;
+}
+
+/************Tratamento responsivo************/
+/*Abaixo nos ajuda com responsividade ou seja
+ele se adaptará a qualquer tela
+o @media é como se fosse um if e else e isso quer dizer
+que se a tela for inferior ao tamanho determinado (max-width: 480px)
+o estilo abaixo será aplicado, usamos essa estrutura para mobile*/
+
+/*Smatphone*/
+@media screen and (max-width: 480px){
+    /*Principal*/
+    body{
+        /*Tirando a margem*/
+        margin: 0px;
+    }
+    #main{
+        margin: 0px;
+    }
+
+    /*cabeçalho*/
+
+    header{
+
+    margin-bottom: 0px;
+    text-align: center;/*centraliza tudo*/
+}
+    header img{
+
+    margin-top: 0px;
+    margin-left: 0px;
+
+}
+    /*Menu Hamburgue*/
+    .Mobile{
+        display: block;
+        background-color: #000616;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 15px;
+    }
+    nav > ul > li{
+            float: none;
+            width: 100%;
+    }
+    nav ul{
+        width: 100%;
+        display: none;
+    }
+
+    nav ul li a{
+        
+        text-align: left;
+    }
+    nav ul li a:hover{
+        transition: 0s;/*Remove os efeitos de transição nop mobile*/
+    }
+    nav li ul li{
+        background-color: #044364;
+    }
+    nav li ul li a{
+        background-color: #cf5629;
+        padding-left: 30px;
+    }
+
+    /*importante para o UX no dispositivo mobile, não exibir o segundo nivel do menu enquanto conteudo não for clicado*/
+    nav li:hover ul{
+        display: none;
+    }
+
+   
+
+    }
+}
+

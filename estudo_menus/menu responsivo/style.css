@@ -1,0 +1,110 @@
+/**
+* Estudo dos menus
+* Menu drop responsivo
+* @author Marcio Roberto
+* Data 01/10/2018
+*/
+
+body{
+	font-family: sans-serif;
+}
+
+nav{
+	width: 100%;
+}
+nav ul{
+	/*removendo o estilo da lista*/
+	list-style: none;
+	/*Removendo os espaçamentos*/
+	padding: 0px;
+	/*Removendo as bordas*/
+	margin: 0px;
+	background-color: #000610;
+	/*Completar a largura qua falta do background (formar o menu)*/
+	overflow: hidden;
+}
+
+nav > ul > li{
+	float: left;
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: #ffffff;
+	padding: 15px;
+	display: block;
+}
+
+nav ul li a:hover{
+	background-color: #00bcff;
+	transition: all 0.27s; /*Efeito de transição (0 a 1)*/
+}
+
+nav li ul{
+	display: none;
+}
+
+nav li:hover ul{
+	display: block;
+	position: absolute;
+}
+
+/* Desenhando um triângulo no css*/
+
+.Detalhes:after{/*atributo after (após o conteúdo)*/
+	content: '';/*content insere um conteúdo no css*/
+	color: #ff0000;
+	border: 5px solid transparent;
+	border-top-color: #e8e8e8;
+	display: inline-block;
+	vertical-align: middle;
+
+	/*border-left: #ff0000;
+	border-right: #00ff00;
+	border-bottom: #0000ff;
+	border-top: #ffff00;*/
+}
+
+.Mobile{
+	display: none;
+}
+/*Classe usada pelo o JS para fixar o menu*/
+.Fixar{
+	position: fixed;
+	top: 0;
+	z-index: 3;
+}
+
+/************Tratamento responsivo************/
+/*Abaixo nos ajuda com responsividade ou seja
+ele se adaptará a qualquer tela
+o @media é como se fosse um if e else e isso quer dizer
+que se a tela for inferior ao tamanho determinado (max-width: 480px)
+o estilo abaixo será aplicado, usamos essa estrutura para mobile*/
+@media screen and (max-width: 480px){
+	body{
+		/*Tirando a margem*/
+		margin: 0px;
+	}
+	/*Menu Hamburgue*/
+	.Mobile{
+		display: block;
+		background-color: #000616;
+		color: #ffffff;
+		text-decoration: none;
+		padding: 15px;
+	}
+	nav > ul > li{
+			float: none;
+	}
+	nav ul{
+		width: 100%;
+		display: none;
+	}
+	nav ul li a:hover{
+		transition: 0s;/*Remove os efeitos de transição nop mobile*/
+	}
+	nav li ul li{
+		background-color: #044364;
+	}
+}

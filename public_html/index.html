@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+ 
 <head>
 	<meta charset="UTF-8">
-
-	<!--favicon-->
-		<link rel="icon" href="imagens/favicon.png">
-
+	<!-- favicon -->
+	<link rel="icon" href="imagens/favicon.png">
 	<title>Home - html5 css3</title>
-
 	<!-- SEO Importante -->
-	
-	<meta name= description content= "Aprenda html5 e css3 de forma simples e prática">
-
+	<meta name=description content="Aprenda html5 e css3 de forma simples e prática">
 	<!-- A linha abaixo garante o layout responsivo nos diversos dispositivos mobile -->
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
 <body>
-	<!--estrutura principal-->
-	<div  id="main">
-	<!--cabeçalho-->
+	<!-- Estrutura principal -->
+	<div id="main">
 
-	<header>
-		<img src="imagens/comic1.ico" alt="html5 css3">
-	</header>	
+		<!-- Cabeçalho -->
+		<header>
+			<!-- <p>logotipo</p> -->
+			<a href="index.html"><img src="imagens/comic1.ico" alt="html5 css3"></a>
+				
 
-	<!--menu-->
-	<nav>
-		<!--ul>li*4>a -->
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Sobre</a></li>
-			<li><a href="#">Conteúdo</a>
-				<ul>
-					<li><a href="#">Html</a></li>
-					<li><a href="#">Css3</a></li>
-					<li><a href="#">JavaScript</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Contato</a></li>
-		</ul>
-	</nav>
 
-	<!--conteúdo-->
-	<section id="banner">
-		<img src="imagens/banner.jpg" alt="curso html5 css3">
-		<h1>PRIMEIROS PASSOS COM HTML5 + CSS3</h1>
-	</section>
+		</header>
 
-	<section id="heading">
+		<!-- Menu -->
+		<nav class="Menu"><!-- Classe usada para fixar menu no JS-->
+			<!--A linha abaixo cria o menu hamburgue > &#9776 = (Três linhas horizontais)-->
+			<a href="#" class="Mobile">&#9776; Menu</a>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="sobre.html">Sobre</a>
+				<h1>
+
+				</li>
+				<li><a href="#" class="Detalhes">Conteúdo </a>
+					<ul>
+						<!-- <div id="Sub-menu"> -->
+						
+						<li><a href="conteudo/html5.html">html5</a></li>
+						<li><a href="conteudo/css3.html">css3</a></li>
+						<li><a href="https://www.youtube.com/playlist?list=PLbEOwbQR9lqyuy7U1YjGgBv0x2Hzuw569" target="_blank">javascript</a></li>	
+						
+					</ul>
+				</li>			
+				<li><a href="contato.html">Contato</a></li>
+			</ul>
+		</nav>
+
+		<!-- Conteúdo -->
+		<section id="banner">
+			<!-- <p>banner</p> -->
+			<img src="imagens/banner.jpg" alt="curso html5 css3">
+			<h1>Primeiros passos com HTML5 + CSS3</h1>
+		</section>
+		<section id="heading">
 		<h2>Aprenda HTML5 e CSS3 de forma simples e prática, desenvolvendo um site responsivo do "zero"</h2>
 	</section>
 
@@ -76,12 +82,17 @@
 
 	</section>
 
-	<!--rodapé-->
-	<footer>
-		<p>©2018 - Anselmo Bortoletto</p>
-	</footer>
+		<!-- rodapé -->
+		<footer>
+			<p>©2018 - ANSELMO </p>
+		</footer>
 
-	
+
 	</div>
+	<script src="scripts/menuresponsivo.js"></script>	
+	<script src="scripts/fixamenu.js"></script>
+	<script src="scripts/removeclick.js"></script>
+
 </body>
+
 </html>
